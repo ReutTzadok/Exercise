@@ -1,7 +1,6 @@
 package logic;
 
 import lombok.SneakyThrows;
-import model.Quote;
 
 import java.io.File;
 import java.io.Serializable;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-//import java.util.stream.*;
 
 
 public class Scheduler implements Serializable {

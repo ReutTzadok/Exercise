@@ -27,6 +27,11 @@
             <artifactId>jackson</artifactId>
             <version>8.9.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11.wso2v1</version>
+        </dependency>
     </dependencies>
 
     <properties>

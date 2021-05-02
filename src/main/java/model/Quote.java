@@ -29,10 +29,14 @@ public class Quote implements Serializable {
 
     @SneakyThrows
     private int createNewId() {
-        String path = "C:\\Users\\User\\Desktop\\Big Data Course\\Big Data\\Exercise\\src\\main\\resources\\idCounter.txt";
-        File file = new File(path);
+        String filePath = "C:\\Users\\User\\Desktop\\Big Data Course\\Big Data\\Exercise\\src\\main\\resources\\";
+        String fileName = "idCounter.txt";
+
+        File file = new File(filePath + fileName);
+
         Integer newId = (Integer) FilesHandler.readFromFile(file);
-        FilesHandler.writeToFile(newId + 1, "C:\\Users\\User\\Desktop\\Big Data Course\\Big Data\\Exercise\\src\\main\\resources\\", "idCounter.txt");
+        FilesHandler.writeToFile(newId + 1, filePath, fileName);
+
         return newId;
     }
 }
