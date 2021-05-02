@@ -12,7 +12,6 @@ public class QuotesProducer {
         Quote quote = context.getObject(Quote.class);
 
         String path = "C:\\Users\\User\\Desktop\\Big Data Course\\Big Data\\Exercise\\Files\\Objects\\";
-        System.out.println(quote);
 
         FilesHandler.writeToFile(quote, path, FilesHandler.createFileName());
     }

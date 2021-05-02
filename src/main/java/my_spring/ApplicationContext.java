@@ -21,7 +21,6 @@ public class ApplicationContext {
     public ApplicationContext(String packageToScan) {
         this.config = new JavaConfig(packageToScan);
         scanner = new Reflections(config.getPackageToScan());
-//        singletonsInstance.put(IRobotImpl.class, null);
 
         factory = new ObjectFactory(this);
     }

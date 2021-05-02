@@ -12,7 +12,6 @@ public class JavaConfig implements Config {
     private String packageToScan;
 
     public JavaConfig(String packageToScan) {
-//        ifc2ImplClass.put(Speaker.class, SpeakerImpl.class);
         this.packageToScan = packageToScan;
     }
 
