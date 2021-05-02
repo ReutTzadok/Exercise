@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 public class FilesHandler {
     @SneakyThrows
-    public static <T> void writeToFile(T object, String path, String fileName) {
+    public static <T> File writeToFile(T object, String path, String fileName) {
 
         String filePath = path + fileName;
 
@@ -23,6 +23,8 @@ public class FilesHandler {
 
         oos.writeObject(object);
         oos.close();
+
+        return file;
     }
 
     //-------------------------------------------------------------------------------------

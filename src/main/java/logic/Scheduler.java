@@ -21,10 +21,10 @@ public class Scheduler implements Serializable {
             System.out.println("new iteration:");
             List<File> newFiles = new ArrayList<>(Arrays.asList(Objects.requireNonNull(directory.listFiles())));
 
-            newFiles.stream().filter(file -> !existFiles.contains(file)).forEach(file -> QuoteConvert.readAndConvertQuote(file, existFiles));
+            newFiles.parallelStream().filter(file -> !existFiles.contains(file)).forEach(file -> QuoteConvert.readAndConvertQuote(file, existFiles));
 
 
-            Thread.sleep(10000);
+            Thread.sleep(20000);
         }
 
     }

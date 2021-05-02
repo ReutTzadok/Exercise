@@ -1,20 +1,23 @@
 package model;
 
 
-import logic.FilesHandler;
-import lombok.SneakyThrows;
+import lombok.NoArgsConstructor;
+import my_spring.InjectId;
+import my_spring.InjectRandomQuote;
+import my_spring.RunThisMethode;
 
-import java.io.File;
 import java.io.Serializable;
 
+@NoArgsConstructor
 public class Quote implements Serializable {
+    @InjectId
     private int id;
+    @InjectRandomQuote
     private String quote;
     private QuoteLength length;
 
-    public Quote(String quote) {
-        this.id = createNewId();
-        this.quote = quote;
+    @RunThisMethode
+    public void setLength() {
         this.length = QuoteLength.findQuoteLength(quote);
     }
 
@@ -27,16 +30,4 @@ public class Quote implements Serializable {
                 '}';
     }
 
-    @SneakyThrows
-    private int createNewId() {
-        String filePath = "C:\\Users\\User\\Desktop\\Big Data Course\\Big Data\\Exercise\\src\\main\\resources\\";
-        String fileName = "idCounter.txt";
-
-        File file = new File(filePath + fileName);
-
-        Integer newId = (Integer) FilesHandler.readFromFile(file);
-        FilesHandler.writeToFile(newId + 1, filePath, fileName);
-
-        return newId;
-    }
 }
